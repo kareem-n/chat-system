@@ -47,7 +47,6 @@ function App() {
 
   return (
     <StateContextProvider>
-      <h1>kareem</h1>
 
       <Box height={'100vh'} overflow={'hidden'}>
         <Routes>
