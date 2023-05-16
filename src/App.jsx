@@ -76,7 +76,8 @@ function App() {
 
 
         </Routes>
-      </Box >        </StateContextProvider>
+      </Box >
+    </StateContextProvider>
 
   )
 }
