@@ -3,27 +3,26 @@ import React, { useContext, useEffect } from 'react';
 import SidebarTabs from './sidebar/SidebarTabs';
 import { UserContext } from '../../context/user';
 import { Comment } from 'react-loader-spinner'
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { StateManagment } from '../../context/state';
 
 function Home() {
 
     let { user } = useContext(UserContext);
     let { chatDetect, setChatDetected } = useContext(StateManagment);
+    const location = useLocation();
 
 
     useEffect(() => {
-
         if (
-            window.location.pathname === '/#/home' ||
-            window.location.pathname === '#/home/'
+            location.pathname === '/home' ||
+            location.pathname === '/home/'
         ) {
-            console.log(0);
             setChatDetected(false);
         } else {
             setChatDetected(true);
-
         }
+
 
 
     }, []);
@@ -45,7 +44,7 @@ function Home() {
                         backgroundColor: '#2C3639',
                         position: 'relative',
                         zIndex: '5',
-                        order: { xs: chatDetect ? '0' : '2', lg: '1' }
+                        order: { xs: chatDetect ? '2' : '0', lg: '1' }
 
                     }}
                     >

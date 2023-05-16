@@ -193,7 +193,9 @@ function Chat() {
                                 display: { xs: 'block', lg: 'none' },
                                 paddingRight: '0.5rem'
                             }}>
-                            <IoIosArrowBack size={30} cursor={'pointer'} />
+                            <IoIosArrowBack onClick={()=>{
+                                console.log(0);
+                            }} size={30} cursor={'pointer'} />
                         </Box>
                         <Avatar sx={{
                             marginRight: '1rem'
