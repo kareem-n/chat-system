@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  background-color: rgb(59, 63, 63);
+  color: #fff !important;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+a {
+  display: block;
+}
+
+a.active {
+  background-color: rgb(70, 92, 86);
+  color: #fff;
+}
+a.pending {
+  opacity: 0.8;
+  color: #fff;
+}
+
+a.pending:hover {
+  background-color: rgb(70, 92, 86);
+}
+
+.test::-webkit-scrollbar {
+  background-color: rgb(180, 180, 180);
+  width: 3px;
+}
+
+.test::-webkit-scrollbar-thumb {
+  background-color: rgb(9, 61, 22);
+}
+
+.test::-webkit-scrollbar-button {
+  display: none;
+}
