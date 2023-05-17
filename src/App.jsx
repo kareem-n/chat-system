@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Box, Stack } from '@mui/material'
 import Login from './components/login/Login';
 import { Navigate, Route, Routes } from 'react-router-dom';
@@ -12,11 +12,21 @@ function App() {
 
   let { userListner } = useContext(UserContext);
 
+  const [innerHeight, setinnnerHeight] = useState(window.innerHeight);
+
 
   useEffect(() => {
+    window.addEventListener("resize", () => {
+      setinnnerHeight(window.innerHeight)
+    })
 
     if (localStorage.getItem("userInfo")) {
       userListner(JSON.parse(localStorage.getItem("userInfo")));
+    }
+
+
+    return () => {
+      window.removeEventListener("resize", () => { })
     }
 
   }, [])
@@ -48,7 +58,7 @@ function App() {
   return (
     <StateContextProvider>
 
-      <Box height={'100vh'} overflow={'hidden'}>
+      <Box height={innerHeight} overflow={'hidden'}>
         <Routes>
           <Route path='/' element={
             <ProtectAuth>
