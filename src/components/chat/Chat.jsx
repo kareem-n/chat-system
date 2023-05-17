@@ -1,6 +1,7 @@
 import { Box, Avatar, Stack, Paper, Typography } from '@mui/material';
 import { addDoc, arrayUnion, collection, doc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore';
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import chat_bg from '../../assets/chat-bg.jpg';
 import { useParams } from 'react-router-dom'
 import { db } from '../../firebase/firebase';
 import { Comment } from 'react-loader-spinner';
@@ -178,6 +179,11 @@ function Chat() {
         <>
 
             {chatedUser ? <Stack sx={{
+                background: `url(${chat_bg})`,
+                backgroundPosition: 'center center',
+                backgroundSize: { xs: '100%', lg: '40%' },
+                backgroundBlendMode: 'overlay',
+                backgroundColor: 'rgba(0,0,0,0.6)',
                 height: '100%',
             }}>
                 <Stack flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} sx={{
@@ -193,7 +199,7 @@ function Chat() {
                                 display: { xs: 'block', lg: 'none' },
                                 paddingRight: '0.5rem'
                             }}>
-                            <IoIosArrowBack onClick={()=>{
+                            <IoIosArrowBack onClick={() => {
                                 console.log(0);
                             }} size={30} cursor={'pointer'} />
                         </Box>
@@ -204,6 +210,9 @@ function Chat() {
                             {chatedUser.displayName}
                         </Typography>
                     </Stack>
+
+
+
 
                     <Stack flexDirection={'row'} >
                         <FiPhoneCall size={22} />
@@ -233,7 +242,7 @@ function Chat() {
                                         maxWidth: { xs: '70%', lg: '50%' },
                                         borderRadius: '15px',
                                         borderTopLeftRadius: '0px',
-                                        padding: '1rem',
+                                        padding: '0.6rem 1rem',
                                         backgroundColor: '#F0EBCE',
                                     }}>
                                         <Stack alignItems={'flex-start'} flexDirection={'row'}>
@@ -267,7 +276,7 @@ function Chat() {
                                         maxWidth: '60%',
                                         borderRadius: '15px',
                                         borderTopRightRadius: '0px',
-                                        padding: '1rem',
+                                        padding: '0.6rem 1rem',
                                         backgroundColor: 'rgb(172, 172, 194)',
                                         color: '#000',
                                         fontWeight: 'bold',
@@ -363,8 +372,8 @@ function Chat() {
                             cursor: 'pointer',
                             backgroundColor: '#fff',
                             borderRadius: '50%',
-                            width: { xs: "15%", lg: '6%' },
-                            height: '100%',
+                            width: { xs: "50px", lg: '55px' },
+                            // height: '100%',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
