@@ -161,9 +161,7 @@ function Chat() {
                 data: arrayUnion(newObject)
             }).then(() => {
                 chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight + 1000;
-
                 msgInputRef.current.value = ''
-                console.log("Object added to array!");
 
             }).catch((error) => {
                 console.error("Error adding object to array:", error);

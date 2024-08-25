@@ -1,14 +1,12 @@
-import { Button, Card, CardContent, IconButton, InputAdornment, Link, Stack, TextField, Typography } from '@mui/material'
+import { Button, Card, CardContent, IconButton, InputAdornment, Stack, TextField, Typography } from '@mui/material'
 import React, { useContext } from 'react'
 import { FaEye, FaEyeSlash, FaFacebookSquare, FaGoogle } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/user';
 
 function Login() {
 
     let { googleLogin, facebookLogin } = useContext(UserContext);
 
-    const navigate = useNavigate();
 
     const [showPassword, setShowPassword] = React.useState(false);
 
@@ -18,9 +16,6 @@ function Login() {
     };
 
 
-    const handleCreateAccount = () => {
-        navigate('/register');
-    };
     return (
         <div
             style={{
