@@ -69,6 +69,7 @@ function App() {
             <ProtectAuth>
               <Login />
             </ProtectAuth>
+                    
           } />
           <Route path='/home' element={
             <ProtectRoute>
