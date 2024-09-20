@@ -111,7 +111,6 @@ function Chat() {
         updateDoc(currentUser, {
             msg: arrayUnion(newObject)
         }).then(() => {
-            console.log("Object added to array!");
 
             const other = doc(db, "users", id);
 
@@ -122,7 +121,7 @@ function Chat() {
             updateDoc(other, {
                 msg: arrayUnion(newObject)
             }).then(() => {
-                console.log("Object added to array!");
+                // console.log("Object added to array!");
             }).catch((error) => {
                 console.error("Error adding object to array:", error);
             });
@@ -183,7 +182,11 @@ function Chat() {
                 backgroundBlendMode: 'overlay',
                 backgroundColor: 'rgba(0,0,0,0.6)',
                 height: '100%',
-            }}>
+               
+                
+            }}
+            flexGrow={1}
+            >
                 <Stack flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} sx={{
                     backgroundColor: '#2C3639',
                     padding: { xs: '0.7rem 1rem', lg: '0.7rem 3rem' },
@@ -198,7 +201,6 @@ function Chat() {
                                 paddingRight: '0.5rem'
                             }}>
                             <IoIosArrowBack onClick={() => {
-                                console.log(0);
                             }} size={30} cursor={'pointer'} />
                         </Box>
                         <Avatar sx={{
@@ -222,9 +224,9 @@ function Chat() {
 
                 </Stack>
 
-                <Stack ref={chatBoxRef} sx={{
+                <Stack bgcolor={'red'} ref={chatBoxRef} sx={{
                     overflowY: 'scroll',
-                    height: '50px',
+                    height: '100%',
                     padding: { xs: '0rem 1rem', lg: '0.7rem 3rem' },
                 }}
 
