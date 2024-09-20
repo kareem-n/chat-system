@@ -17,7 +17,7 @@ function SidebarTabs() {
 
   return (
 
-    <Stack height={'100%'}>
+    <Stack height={'100vh'}>
       <Tabs variant='fullWidth' value={value} onChange={handleChange}>
         <Tab label={
           <Stack color={'white'} alignItems={'center'}>
@@ -61,7 +61,7 @@ function SidebarTabs() {
         opacity:'0.3'
       }}></div>
 
-      <Box sx={{ height: '100%' }}>
+      <Box height={'70%'} >
         {value === 0 &&  <Chats /> }
         {value === 1 && <div>group chats is under develope</div>}
         {value === 2 && <Profile />}

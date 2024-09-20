@@ -58,7 +58,7 @@ function App() {
   return (
     <StateContextProvider>
 
-      <Box overflow={'hidden'}>
+      <Box height={'100%'} overflow={'hidden'}>
         <Routes>
           <Route path='/' element={
             <ProtectAuth>
@@ -69,7 +69,7 @@ function App() {
             <ProtectAuth>
               <Login />
             </ProtectAuth>
-                    
+
           } />
           <Route path='/home' element={
             <ProtectRoute>
@@ -77,10 +77,13 @@ function App() {
             </ProtectRoute>
           } >
             <Route path='chat/:id' element={<Chat />} />
-            <Route path='' element={<Stack alignItems={'center'} justifyContent={'center'} height={'100%'}>
-              <IoLogoSnapchat size={100} />
-              <h1>click a Chat now</h1>
-            </Stack>} />
+            <Route path='' element={
+              <Stack alignItems={'center'} justifyContent={'center'} height={'100%'}>
+                <IoLogoSnapchat size={100} />
+                <h1>click a Chat now</h1>
+              </Stack>
+            }
+            />
 
           </Route>
 

@@ -44,13 +44,21 @@ function Chats() {
 
     return (
         <>
-            <Box position={'relative'} height={'100%'}>
+            <Box
+            margin={'10px'}
+            height={'100%'}
+
+            position={'relative'} 
+            sx={{
+                overflowY : 'scroll'
+            }} 
+            >
                 {
                     users ?
                         users.map((user, i) => {
                             return <NavLink
                                 onClick={() => { setChatDetected(true) }}
-                                className={({ isActive, isPending }) =>
+                                className={({ isActive }) =>
                                     isActive ? ' active ' : 'pending'
                                 }
                                 style={{

@@ -32,7 +32,7 @@ function Home() {
 
     return (
         <>
-            {user ? <Box height={'100%'}>
+            {user ? <Box height={'100vh'}>
 
 
                 <Grid container sx={{ height: '100%' }}>

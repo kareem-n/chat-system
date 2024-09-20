@@ -224,7 +224,7 @@ function Chat() {
 
                 </Stack>
 
-                <Stack bgcolor={'red'} ref={chatBoxRef} sx={{
+                <Stack ref={chatBoxRef} sx={{
                     overflowY: 'scroll',
                     height: '100%',
                     padding: { xs: '0rem 1rem', lg: '0.7rem 3rem' },
